@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#game {
+    width: 500px;
+    height: 200px;
+    border: 1px solid #000;
+    margin: auto;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+#character {
+    width: 25px;
+    height: 50px;
+    /* background-color: #f00; */
+    position: relative;
+    top: 160px;
+    background-image: url("trex.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+#block {
+    width: 20px;
+    height: 20px;
+    background-color: #00f;
+    position: relative;
+    top: 130px;
+    left: 480px;
+    animation: block 1s;
+    -webkit-animation: block 1s infinite linear;
+}
+
+.animate {
+    animation: 500ms jump;
+    -webkit-animation: 500ms jump;
+}
+
+@keyframes jump {
+    0%{top: 160px;}
+    50%{top: 110px;}
+    70%{top: 110px;}
+    100%{top: 160px;}
+}
+
+@keyframes block {
+    0%{left: 480px;}
+    100%{left: -40px;}
+}

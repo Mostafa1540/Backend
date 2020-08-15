@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            /* padding: 0; */
+            box-sizing: border-box;
+        }
+        h1 {
+            background-color: rgb(24, 5, 5);
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        p.msg {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        ul {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <p class="msg">{{message}}</p>
+        <ul>
+            <li v-for="course in courses">
+                {{course}}
+            </li>
+        </ul>
+        <p>Copyright &copy; 2020</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="custom.js"></script>
+</body>
+</html>
