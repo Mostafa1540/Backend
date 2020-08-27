@@ -1,0 +1,3 @@
+ADDED:
+
+- adding disabled to the input when the character are more than 139

@@ -1,0 +1,12 @@
+@font-face{
+    font-family: Alata-Regular;
+    src: url(../webfonts/Alata/Alata-Regular.ttf);
+}
+
+body, html {
+    font-family: Alata-Regular;
+}
+
+ul {
+    list-style: none;
+}

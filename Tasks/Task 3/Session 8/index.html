@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="courses-list">
+        <header class="bg-dark text-white p-3 mb-2 text-center">
+            <h1>{{header}}</h1>
+            <button class="btn btn-success btn-sm" v-if="state === 'default'" @click="changeState('add')">Add Course</button>
+            <button class="btn btn-danger btn-sm" v-else @click="changeState('default')">Cancel</button>
+        </header>
+        <section class="form" v-if="state === 'add'">
+            <div class="container">
+                <div class="row">
+                    <input type="text" placeholder="Add Course" class="form-control col-sm-6" v-model="newCourse" @keyup.enter="saveCourse()" :disabled="charCounter > 139 ? true : false">
+                    <p class="text-center col-sm-1 ml-2 mt-1">{{charCounter + " / " +  noOfChars}}</p>
+                    <button class="btn btn-success btn-sm col-sm-2 ml-2 mt-1" @click="saveCourse()">Save Course</button>
+                </div>
+            </div>
+        </section>
+        <section class="view-courses text-center mt-3">
+            <ul>
+                <li v-for="(item, key) in reverseCourses" class="mx-2">
+                    {{item}}
+                    <button class="btn btn-danger btn-sm" @click="deleteCourse(key)">Remove Course</button>
+                </li>
+            </ul>
+            <p v-if="courses.length === 0" class="text-center">Great Job , You Are Completed All Courses</p>
+        </section>
+    </div>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
