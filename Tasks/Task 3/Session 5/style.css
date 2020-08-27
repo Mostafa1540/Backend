@@ -1,0 +1,18 @@
+html , body{
+    font-family: 'Open Sans', sans-serif;
+}
+.fa-chalkboard-teacher{
+   color: #2fB45A;
+}
+.btn-primary{
+    background-color: #2fB45A;
+    border: none;
+}
+.btn-primary:hover{
+    border: none;
+    background-color: #2fB45A;
+    opacity: .8;
+}
+footer span{
+    color: #2fB45A;
+}
