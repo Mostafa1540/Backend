@@ -140,38 +140,106 @@ m = 5;
 
 // 1-
 
-// class Question{
-//     constructor(question, answer) {
-//         this.question = question;
-//         this.answer = answer;
-//     }
-// }
+class Question {
+    constructor(question, number, when) {
+        this.question = question;
+        this.number = number;
+        this.when = when; //the when is how many 'no' & 'yes' (in order) are needed to display the question
+        this.answers = ['Yes', 'No'];
+    }
+
+    display() {
+        console.log(`${this.number}) ${this.question}`);
+        this.answers.forEach((cur, index) => console.log(`${(index + 1)}- ${cur}`));
+        console.log('---------------------------------------------------\nTo Exit or to Start answering from the First Question type exit\n---------------------------------------------------')
+    }
+}
 
 
-// class Animal{
-//     constructor(name, fly, flyWild, underSea, wild) {
-//         this.name = name;
-//         this.fly = fly;
-//         this.flyWild = flyWild;
-//         this.underSea = underSea;
-//         this.wild = wild;
-//     }
+class Animal{
+    constructor(name, fly, flyWild, underSea, wild) {
+        this.name = name;
+        this.fly = fly;
+        this.flyWild = flyWild;
+        this.underSea = underSea;
+        this.wild = wild;
+    }
     
-//     getAnswers() {
-//         return [this.name, this.fly, this.flyWild, this.underSea, this.wild]
-//     }
+    getAnswers() {
+        let data = [this.fly, this.flyWild, this.underSea, this.wild]
+        return data.filter(function( element ) {
+            return element !== undefined;
+         });
+    }
 
-// }
-// const animals = [
-//     new Animal('eagle', 'true', 'true'),
-//     new Animal('parrot', 'true', 'false'),
-//     new Animal('shark', 'false', 'true', 'true'),
-//     new Animal('dolphin' ,'false', 'true', 'false'),
-//     new Animal('lion' ,'false', 'false', 'true'),
-//     new Animal('cat','false', 'false', 'false')
-// ]
+}
+const animals = [
+    new Animal('Eagle', 'true', 'true'),
+    new Animal('Parrot', 'true', 'false'),
+    new Animal('Shark', 'false', 'true', 'true'),
+    new Animal('Dolphin' ,'false', 'true', 'false'),
+    new Animal('Lion' ,'false', 'false', 'true'),
+    new Animal('Cat','false', 'false', 'false')
+]
 
 
+let arr = [], displayedArr = [], ans;
+
+
+questions = [
+    new Question('Do You Fly', 1, []),
+    new Question('Are you Wild', 2, ['true']),
+    new Question('Do you live under sea', 3, ['false']),
+    new Question('Are you Wild', 4, ['false', 'true']),
+    new Question('Are you Wild', 5, ['false', 'false']),
+]
+
+
+
+function check() {
+    //choose the next question according to it's when
+    questions.forEach(cur => {
+        // pass the question [which it's when equals the arr content and length] as ask  argument
+        if (cur.when.length == arr.length && cur.when.join(' ') == arr.join(' ')) {
+            ask(cur);
+            // display the animal name when it's answers are the same as the arr content(answers)
+            animals.forEach(cur => {
+                if (cur.getAnswers().join(' ') == arr.join(' ')) {
+                    console.log(`The animal is: ${cur.name}`);
+                }
+            })
+
+        }
+    })
+}
+
+check();
+
+function ask(choose) {
+    // Display the question and answers
+    choose.display()
+
+    // check if answer is true/false and push it to the arr
+    ans = prompt('Choose (answer with 1 or 2)');
+    
+    if (ans == 1 || ans ==2) {
+        if (ans == 1) {
+            arr.push('true');
+            displayedArr.push('Yes');
+        } else if (ans == 2) {
+            arr.push('false')
+            displayedArr.push('No')
+        }
+        console.log(`Total Answers till now: ${displayedArr}`)
+    } else {
+        console.log('Please answer with 1 or 2!!!');
+    }
+}
+
+
+
+
+/*
 
 // 2-
 let obj = {
@@ -237,7 +305,7 @@ console.log(plusTen(0));
 console.log(plusTen(188));
 
 console.log(plusFive((plusTen(0))));
-
+*/
 
 
 
@@ -247,7 +315,7 @@ console.log(plusFive((plusTen(0))));
 //////////Question 4//////////
 //////////////////////////////
 
-
+/*
 // 1
 
 let encapsulation = (function() {
@@ -290,3 +358,4 @@ function reverseSentenceWords(str, initial) {
 reverseSentenceWords('word searches are super fun', 's');
 reverseSentenceWords('first man to walk on the moon', 'm');
 reverseSentenceWords('peter piper picked peppers', 'p');
+*/
