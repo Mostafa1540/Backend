@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow-x: hidden;
+        }
+        .overlay {
+            z-index: -1;
+            background-color: rgba(0, 0, 0, 0.65);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+        header {
+            height: 60px;
+        }
+        header .container {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .bars {
+            cursor: pointer;
+        }
+        .bar {
+            background-color: #000;
+            height: 2px;
+            width: 22px;
+            margin-bottom: 5px;
+        }
+        section {
+            background-image: url(img/bg.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: calc(100vh - (60px + 60px));
+            z-index: 1;
+        }
+        .banner {
+            top: 40%;
+            transform: translateY(-40%);
+            left: 5%;
+        }
+        .banner p {
+            width: 85%;
+            color: #b2bec3;
+        }
+        footer {
+            height: 60px;
+        }
+        footer .container {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @media(min-width: 778px) {
+            .banner p {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div id="app">
+
+        <navbarr></navbarr>
+
+        <banerr></banerr>
+
+        <footerr></footerr>
+
+    </div>
+    
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

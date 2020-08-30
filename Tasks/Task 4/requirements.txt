@@ -1,0 +1,6 @@
+1) Make a navbar, banner & footer using the vue.js components template
+
+
+2)
+-In destructuring objects why do we have to use the same names as objects keys(discuss)?
+-Is there a way to use different names(code it)?
