@@ -5,7 +5,7 @@
 //////////////////////////////////////////////
 ////// B) Destructuring objects with different key names/////
 
-// { what : goes where }
+// Whats does the colon do --> { what : goes where }
 
 
 // -Without a previous object
