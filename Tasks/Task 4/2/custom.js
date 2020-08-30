@@ -5,6 +5,9 @@
 //////////////////////////////////////////////
 ////// B) Destructuring objects with different key names/////
 
+// { what : goes where }
+
+
 // -Without a previous object
 const {name: n, age: a} = {name: 'John', age: 30};
 console.log(n, a)
